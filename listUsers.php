@@ -1,8 +1,10 @@
 <?php
-require_once('assets/Database.php');
-
-$sqlQuery="SELECT * FROM user_info";
-$result=Database::executeQuery($sqlQuery);
+//    import database class
+    require_once('assets/Database.php');
+    //call sql query for retrieve all data in user_info table
+    $sqlQuery="SELECT * FROM user_info";
+//    call static executeQuery function
+    $result=Database::executeQuery($sqlQuery);
 
 ?>
 
@@ -17,8 +19,8 @@ $result=Database::executeQuery($sqlQuery);
 </head>
 <body>
     <h1>All Users</h1>
-
-    <table border="1" class="userList">
+<!--    create simple table to show user information-->
+    <table class="userList">
         <tr>
             <th>Student Number</th>
             <th>First Name</th>
@@ -27,7 +29,6 @@ $result=Database::executeQuery($sqlQuery);
         </tr>
 	        <?php
 		        foreach ($result as $resultLine){
-
 			        echo(
 				        "<tr>".
 				        "<td>".$resultLine['user_id']."</td>".

@@ -1,3 +1,4 @@
+/*styles for listUsers*/
 .userList{
     border-collapse: collapse;
     width: 100%;
@@ -14,4 +15,20 @@
 .userList th{
     background-color: #294a5f;
     color: #e0dede;
+}
+
+/*styles for insertUser*/
+.userRegistration{
+    margin: 10px;
+    font-size: 18px;
+}
+.userRegistration input, .userRegistration select{
+    width: 300px;
+    font-size: 17px;
+    padding: 8px;
+}
+.userRegistration button{
+    width: 100px;
+    padding: 4px;
+    font-size: 17px;
 }
