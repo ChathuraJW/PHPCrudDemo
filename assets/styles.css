@@ -1,0 +1,17 @@
+.userList{
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+}
+.userList td,.userList th{
+    border: 1px solid #535252;
+    padding: 8px;
+}
+.userList tr:hover{
+    background-color: #ddd;
+}
+.userList th{
+    background-color: #294a5f;
+    color: #e0dede;
+}
