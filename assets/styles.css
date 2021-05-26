@@ -18,11 +18,11 @@
 }
 
 /*styles for insertUser*/
-.userRegistration{
+.userRegistration, .searchUser{
     margin: 10px;
     font-size: 18px;
 }
-.userRegistration input, .userRegistration select{
+.userRegistration input, .userRegistration select, .searchUser input{
     width: 300px;
     font-size: 17px;
     padding: 8px;
@@ -31,4 +31,10 @@
     width: 100px;
     padding: 4px;
     font-size: 17px;
+}
+
+.searchUser button{
+    height: 40px;
+    font-size: 17px;
+
 }
