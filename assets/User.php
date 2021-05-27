@@ -1,4 +1,5 @@
 <?php
+
 	class User {
 //		define attributes in the class
 		private int $userID;
@@ -7,11 +8,11 @@
 		private string $degree;
 
 //		setter function
-		public function createUser($userID,$fName,$lName,$degree): User {
-			$this->userID=$userID;
-			$this->firstName=$fName;
-			$this->lastName=$lName;
-			$this->degree=$degree;
+		public function createUser($userID, $fName, $lName, $degree): User {
+			$this->userID = $userID;
+			$this->firstName = $fName;
+			$this->lastName = $lName;
+			$this->degree = $degree;
 			return $this;
 		}
 
@@ -28,8 +29,12 @@
 			return $this->lastName;
 		}
 
+		public function getDegree(): string {
+			return $this->degree;
+		}
+
 		public function isCS(): bool {
-			if($this->degree=='CS')
+			if ($this->degree == 'CS')
 				return true;
 			else
 				return false;

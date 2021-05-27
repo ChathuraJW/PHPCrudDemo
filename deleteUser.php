@@ -1,5 +1,5 @@
 <?php
-	//    import database,User class
+	//	import database,User class
 	require_once('assets/Database.php');
 	require_once('assets/User.php');
 
@@ -20,22 +20,19 @@
 			echo("<script>alert('Invalid User ID.')</script>");
 		}
 	}
-	if (isset($_POST['saveEdit'])) {
+	if (isset($_GET['action'])) {
 //		assign posted data to variables
-		$userID = $_POST['userID'];
-		$firstName = $_POST['firstName'];
-		$lastName = $_POST['lastName'];
-		$degree = $_POST['degree'];
+		$userID = $_GET['userID'];
 
 //		create sql query and run it
-		$sqlQuery = "UPDATE user_info SET first_name='$firstName' , last_name='$lastName' , degree='$degree' WHERE user_id=$userID";
+		$sqlQuery = "DELETE FROM user_info WHERE user_id=$userID";
 		$updateQueryResult = Database::executeQuery($sqlQuery);
 
 //		execution status report
 		if ($updateQueryResult) {
-			echo("<script>alert('Update Completed.');</script>");
+			echo("<script>alert('User Information Deleted');</script>");
 		} else {
-			echo("<script>alert('Update Incomplete.')</script>");
+			echo("<script>alert('Operation Failed.')</script>");
 		}
 	}
 ?>
@@ -60,25 +57,25 @@
 <?php
 	if (isset($searchedUser)) {
 		?>
-        <div class="editableSection">
-            <h1>Edit User Info</h1>
-            <form method="post" action="" class="userRegistration">
-                <label for="userID">User ID</label><br>
-                <input type="number" name="userID" id="userID" value="<?php echo($searchedUser->getUserID()); ?>" required readonly><br>
-                <br>
-                <label for="firstName">First Name</label><br>
-                <input type="text" name="firstName" id="firstName" value="<?php echo($searchedUser->getFirstName()); ?>" required><br>
-                <br>
-                <label for="lastName">Last Name</label><br>
-                <input type="text" name="lastName" id="lastName" value="<?php echo($searchedUser->getLastName()); ?>" required>
-                <br><br>
-                <select name="degree">
-                    <option value="CS" <?php echo $searchedUser->isCS() ? "selected" : ""; ?> >Computer Science</option>
-                    <option value="IS" <?php echo !$searchedUser->isCS() ? "selected" : ""; ?> >Information Systems</option>
-                </select>
-                <br><br>
-                <button type="submit" name="saveEdit">Save</button>
-            </form>
+        <h2>User Information</h2>
+        <table class="userList">
+            <tr>
+                <th>Student Number</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Degree</th>
+            </tr>
+            <tr>
+                <td><?php echo($searchedUser->getUserID()); ?></td>
+                <td><?php echo($searchedUser->getFirstName()); ?></td>
+                <td><?php echo($searchedUser->getLastName()); ?></td>
+                <td><?php echo($searchedUser->getDegree()); ?></td>
+            </tr>
+        </table>
+        <br><br>
+        <!--		a tag as a button-->
+        <div style="text-align: center;">
+            <a href="?action=delete&userID= <?php echo($searchedUser->getUserID()); ?>" class="linkToButton">Delete</a>
         </div>
 	<?php } ?>
 

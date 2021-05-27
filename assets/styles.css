@@ -1,40 +1,58 @@
 /*styles for listUsers*/
-.userList{
+.userList {
     border-collapse: collapse;
     width: 100%;
     font-size: 18px;
     text-align: center;
 }
-.userList td,.userList th{
+
+.userList td, .userList th {
     border: 1px solid #535252;
     padding: 8px;
 }
-.userList tr:hover{
+
+.userList tr:hover {
     background-color: #ddd;
 }
-.userList th{
+
+.userList th {
     background-color: #294a5f;
     color: #e0dede;
 }
 
 /*styles for insertUser*/
-.userRegistration, .searchUser{
+.userRegistration, .searchUser {
     margin: 10px;
     font-size: 18px;
 }
-.userRegistration input, .userRegistration select, .searchUser input{
+
+.userRegistration input, .userRegistration select, .searchUser input {
     width: 300px;
     font-size: 17px;
     padding: 8px;
 }
-.userRegistration button{
+
+.userRegistration button {
     width: 100px;
     padding: 4px;
     font-size: 17px;
 }
 
-.searchUser button{
+.searchUser button {
     height: 40px;
     font-size: 17px;
 
+}
+
+/*style for a tag to button*/
+.linkToButton {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(217, 173, 173, 0.25);
+    border-radius: 2px;
+    text-decoration: none;
+    color: black;
+    height: 40px;
+    font-size: 17px;
+    border: 1px solid gray;
 }
