@@ -56,3 +56,36 @@
     font-size: 17px;
     border: 1px solid gray;
 }
+
+.banner {
+    font-size: 20px;
+    margin: 3px;
+    border: 1px solid #d2c2c2;
+    border-radius: 5px;
+    color: #fdfcfc;
+    text-align: center;
+    padding: 5px;
+}
+
+.green {
+    background-color: #0f800f;
+}
+
+.red {
+    background-color: #9e0b0b;
+}
+
+.frame {
+    width: 49%;
+    height: 500px;
+}
+
+.footer {
+    background-color: black;
+    text-align: center;
+    color: #dddddd;
+    margin: 5px;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 5px;
+}

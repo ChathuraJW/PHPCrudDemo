@@ -2,6 +2,7 @@
 
 	class Database {
 //		describe basic parameters of mysql server
+//		change those parameters accordingly
 		private static string $server = "localhost";
 		private static string $database = "php_crud_demo";
 		private static string $userName = "root";
@@ -25,11 +26,11 @@
 			}
 		}
 
-		private static function connect(): mysqli {
+		public static function connect(): mysqli|bool {
 			$conn = new mysqli(self::$server, self::$userName, self::$password, self::$database);
 			if ($conn->connect_errno) {
-				echo("Exception ::: << " . $conn->connect_error . " >>");
-				exit();
+				#echo("Exception ::: << " . $conn->connect_error . " >>");
+				return false;
 			}
 			return $conn;
 		}
